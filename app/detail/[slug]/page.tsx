@@ -1,16 +1,12 @@
 import Image from "next/image";
 
-interface Props {
-  params: { slug: string };
-}
-
 const detailData: Record<
   string,
   {
     title: string;
     description: string;
     github: string;
-    images?: string[]; // pakai tanda tanya → optional
+    images?: string[];
   }
 > = {
   "slide-pertama": {
@@ -51,7 +47,7 @@ const detailData: Record<
   },
 };
 
-export default function DetailPage({ params }: Props) {
+export default function DetailPage({ params }: { params: { slug: string } }) {
   const detail = detailData[params.slug];
 
   if (!detail) {
@@ -63,7 +59,6 @@ export default function DetailPage({ params }: Props) {
       <h1 className="text-3xl font-bold mb-4">{detail.title}</h1>
       <p className="mb-6">{detail.description}</p>
 
-      {/* Tampilkan gambar jika ada */}
       {detail.images && (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 mb-6">
           {detail.images.map((image, idx) => (
