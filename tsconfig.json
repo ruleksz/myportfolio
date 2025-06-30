@@ -20,10 +20,9 @@
       }
     ],
     "paths": {
-      "@/*": ["app/*"]
-    },
-    "types": ["./types/meshline"]
+      "@/*": ["./*"]
+    }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "types/meshline.d.ts"],
   "exclude": ["node_modules"]
 }
