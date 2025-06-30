@@ -49,14 +49,11 @@ const detailData: Record<
 };
 
 // ✅ Tambahkan ini untuk Next.js App Router
-export function generateStaticParams() {
-  return Object.keys(detailData).map((slug) => ({
-    slug,
-  }));
-}
-
-// ✅ Fungsi utama page
-export default function DetailPage({ params }: { params: { slug: string } }) {
+export default async function DetailPage({
+  params,
+}: {
+  params: { slug: string };
+}) {
   const detail = detailData[params.slug];
 
   if (!detail) {
