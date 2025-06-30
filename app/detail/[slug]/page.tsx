@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-// Data statis
+// 1. DATA
 const detailData: Record<
   string,
   {
@@ -48,7 +48,12 @@ const detailData: Record<
   },
 };
 
-// ✅ Tambahkan ini untuk Next.js App Router
+// 2. GENERATE STATIC PARAMS (WAJIB UNTUK DYNAMIC ROUTE DI APP ROUTER)
+export function generateStaticParams() {
+  return Object.keys(detailData).map((slug) => ({ slug }));
+}
+
+// 3. PAGE COMPONENT — WAJIB ASYNC
 export default async function DetailPage({
   params,
 }: {
