@@ -282,7 +282,7 @@ function Band({ maxSpeed = 50, minSpeed = 0 }: BandProps) {
           </group>
         </RigidBody>
       </group>
-      <mesh ref={band}>
+      {/* <mesh ref={band}>
         <meshLineGeometry />
         <meshLineMaterial
           color="white"
@@ -293,7 +293,7 @@ function Band({ maxSpeed = 50, minSpeed = 0 }: BandProps) {
           repeat={[-4, 1]}
           lineWidth={1}
         />
-      </mesh>
+      </mesh> */}
     </>
   );
 }
