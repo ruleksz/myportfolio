@@ -103,7 +103,7 @@ export default function CarouselWithDescription() {
         <p className="text-gray-300">{images[current].description}</p>
         <div className="flex flex-col md:flex-row gap-4 justify-center md:justify-start">
           <a
-            href={`/detail/${images[current].slug}`}
+            href={`/detail/${images[current].slug}/`}
             className="bg-[#c6f10e] text-black items-center flex transition px-5 py-2 rounded-lg font-medium"
           >
             Lihat Detail
